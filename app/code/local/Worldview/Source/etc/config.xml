@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Worldview_Source>
+            <version>0.0.1</version>
+        </Worldview_Source>
+    </modules>
+
+    <global>
+        <models>
+            <worldview_source>
+                <class>Worldview_Source_Model</class>
+                <resourceModel>worldview_source_mysql4</resourceModel>
+            </worldview_source>
+            <worldview_source_mysql4>
+                <class>Worldview_Source_Model_Mysql4</class>
+                <entities>
+                    <rss_source>
+                        <table>rss_source</table>
+                    </rss_source>
+                </entities>
+            </worldview_source_mysql4>
+        </models>
+
+        <helpers>
+            <worldview_source>
+                <class>Worldview_Source_Helper</class>
+            </worldview_source>
+        </helpers>
+
+        <resources>
+            <worldview_source_setup>
+                <setup>
+                    <module>Worldview_Source</module>
+                </setup>
+            </worldview_source_setup>
+        </resources>
+    </global>
+</config>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Worldview_GetFeeds>
+            <version>0.0.1</version>
+        </Worldview_GetFeeds>
+    </modules>
+
+    <global>
+        <models>
+            <worldview_getfeeds>
+                <class>Worldview_GetFeeds_Model</class>
+            </worldview_getfeeds>
+        </models>
+    
+        <helpers>
+            <worldview_getfeeds>
+                <class>Worldview_GetFeeds_Helper</class>
+            </worldview_getfeeds>
+        </helpers>
+    </global>
+</config>

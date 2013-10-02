@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Worldview_GetFeeds>
+            <active>true</active>
+            <codePool>local</codePool>
+            <depends>
+                <Worldview_Source/>
+            </depends>
+        </Worldview_GetFeeds>
+    </modules>
+</config>
