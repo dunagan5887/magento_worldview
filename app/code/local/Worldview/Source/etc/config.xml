@@ -36,4 +36,13 @@
             </worldview_source_setup>
         </resources>
     </global>
+
+    <default>
+        <scrape>
+            <source_helpers>
+                <fox_news_world>foxnews</fox_news_world>
+                <cnn_world>cnn</cnn_world>
+            </source_helpers>
+        </scrape>
+    </default>
 </config>
