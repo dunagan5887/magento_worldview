@@ -65,6 +65,10 @@ $article_table =
         null,
         array('nullable'  => true),
         'Text of the article'
+    )->addIndex(
+        $installer->getIdxName('worldview_article/article', array('created_at', 'article_category', 'article_language', 'article_country')),
+        array('created_at', 'article_category', 'article_language', 'article_country'),
+        array('type' => Varien_Db_Adapter_Interface::INDEX_TYPE_INDEX)
     )->setComment('Table Abstracting News Articles');
 
 // Create Batch, Batch Type, and Batch Item Tables.
