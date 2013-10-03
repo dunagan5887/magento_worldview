@@ -6,6 +6,7 @@
             <codePool>local</codePool>
             <depends>
                 <Worldview_Source/>
+                <Worldview_Article/>
             </depends>
         </Worldview_GetFeeds>
     </modules>

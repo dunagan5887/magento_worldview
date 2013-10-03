@@ -2,6 +2,8 @@
 
 abstract class Worldview_GetFeeds_Model_Abstract extends Mage_Core_Model_Abstract
 {
+    const ARTICLE_CLASS_NAME = 'worldview_article/article';
+
     abstract public function getFeedData($sources);
 
     abstract public function getSourceModelClassname();

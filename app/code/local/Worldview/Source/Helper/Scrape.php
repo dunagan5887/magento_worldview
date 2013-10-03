@@ -54,8 +54,9 @@ class Worldview_Source_Helper_Scrape extends Mage_Core_Helper_Data
                 require_once $this->_scraper_library_filepath;
                 $this->_scraper_library_has_been_included = true;
             }
-            catch (Excpetion $e)
+            catch (Exception $e)
             {
+                Mage::logException($e);
                 $this->_scraper_library_has_been_included = false;
             }
         }
