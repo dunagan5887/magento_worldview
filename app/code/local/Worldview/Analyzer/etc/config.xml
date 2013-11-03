@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Worldview_Analyzer>
+            <version>0.0.1</version>
+        </Worldview_Analyzer>
+    </modules>
+
+    <global>
+        <models>
+            <worldview_analyzer>
+                <class>Worldview_Analyzer_Model</class>
+            </worldview_analyzer>
+        </models>
+
+        <helpers>
+            <worldview_analyzer>
+                <class>Worldview_Analyzer_Helper</class>
+            </worldview_analyzer>
+        </helpers>
+
+    </global>
+</config>

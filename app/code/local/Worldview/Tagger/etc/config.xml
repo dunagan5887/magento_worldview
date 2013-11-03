@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Worldview_Tagger>
+            <version>0.0.1</version>
+        </Worldview_Tagger>
+    </modules>
+
+    <global>
+        <models>
+            <worldview_tagger>
+                <class>Worldview_Tagger_Model</class>
+            </worldview_tagger>
+        </models>
+
+        <helpers>
+            <worldview_tagger>
+                <class>Worldview_Tagger_Helper</class>
+            </worldview_tagger>
+        </helpers>
+
+        <blocks>
+            <worldview_tagger>
+                <class>Worldview_Tagger_Block</class>
+            </worldview_tagger>
+        </blocks>
+    </global>
+</config>

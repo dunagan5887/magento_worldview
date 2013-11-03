@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Worldview_Cluster>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Worldview_Cluster>
+    </modules>
+</config>

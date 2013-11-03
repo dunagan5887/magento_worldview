@@ -58,6 +58,12 @@ class Worldview_GetFeeds_Model_Rss extends Worldview_GetFeeds_Model_Abstract
         $article->setArticleLanguage($source->getRssLanguage());
         $article->setArticleCountry($source->getRssCountry());
         $article->setArticleCategory($source->getRssCategory());
+
+        $pub_date = $item->pubDate;
+        $pub_timestamp = strtotime($pub_date);
+        $date_string = date('Y-m-d', $pub_timestamp);
+        $article->setPublishedDate($date_string);
+
         // Get current timestamp adjusted for the timezone of the instance
         $article->setCreatedAt(Mage::getModel('core/date')->timestamp());
 

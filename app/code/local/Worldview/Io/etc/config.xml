@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Worldview_Io>
+            <version>0.1.0</version>
+        </Worldview_Io>
+    </modules>
+    <global>
+        <models>
+            <worldview_io>
+                <class>Worldview_Io_Model</class>
+            </worldview_io>
+        </models>
+        <helpers>
+            <worldview_io>
+                <class>Worldview_Io_Helper</class>
+            </worldview_io>
+        </helpers>
+    </global>
+</config>

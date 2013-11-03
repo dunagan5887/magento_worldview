@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Worldview_Tagger>
+            <active>true</active>
+            <codePool>local</codePool>
+            <depends>
+                <Worldview_Io />
+            </depends>
+        </Worldview_Tagger>
+    </modules>
+</config>

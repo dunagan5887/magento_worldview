@@ -6,7 +6,6 @@ $installer = $this;
 // Clean installation.
 $installer->getConnection()->dropTable($installer->getTable('worldview_article/article'));
 
-// Define Batch Table.
 $article_table =
     $installer->getConnection()
     ->newTable($installer->getTable('worldview_article/article'))
@@ -52,7 +51,13 @@ $article_table =
         Varien_Db_Ddl_Table::TYPE_VARCHAR,
         50,
         array('nullable'  => true),
-        'Category of the category'
+        'Category of the article'
+    )->addColumn(
+        'published_date',
+        Varien_Db_Ddl_Table::TYPE_VARCHAR,
+        10,
+        array('nullable'  => false),
+        'Publication Date'
     )->addColumn(
         'created_at',
         Varien_Db_Ddl_Table::TYPE_TIMESTAMP,
@@ -65,9 +70,16 @@ $article_table =
         null,
         array('nullable'  => true),
         'Text of the article'
+    )->addIndex(
+        $installer->getIdxName('worldview_article/article', array('article_category', 'published_date')),
+        array('article_category', 'published_date'),
+        array('type' => Varien_Db_Adapter_Interface::INDEX_TYPE_INDEX)
+    )->addIndex(
+        $installer->getIdxName('worldview_article/article', array('published_date')),
+        array('published_date'),
+        array('type' => Varien_Db_Adapter_Interface::INDEX_TYPE_INDEX)
     )->setComment('Table Abstracting News Articles');
 
-// Create Batch, Batch Type, and Batch Item Tables.
 $installer->getConnection()->createTable($article_table);
 
 $installer->endSetup();

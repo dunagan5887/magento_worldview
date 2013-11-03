@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Worldview_Cluster>
+            <version>0.0.1</version>
+        </Worldview_Cluster>
+    </modules>
+
+    <global>
+        <models>
+            <worldview_cluster>
+                <class>Worldview_Cluster_Model</class>
+                <resourceModel>worldview_cluster_mysql4</resourceModel>
+            </worldview_cluster>
+            <worldview_cluster_mysql4>
+                <class>Worldview_Cluster_Model_Mysql4</class>
+                <entities>
+                    <cluster>
+                        <table>worldview_cluster</table>
+                    </cluster>
+                    <cluster_xref>
+                        <table>worldview_cluster_xref</table>
+                    </cluster_xref>
+                </entities>
+            </worldview_cluster_mysql4>
+        </models>
+
+        <helpers>
+            <worldview_cluster>
+                <class>Worldview_Cluster_Helper</class>
+            </worldview_cluster>
+        </helpers>
+
+        <blocks>
+            <worldview_cluster>
+                <class>Worldview_Cluster_Block</class>
+            </worldview_cluster>
+        </blocks>
+
+        <resources>
+            <worldview_cluster_setup>
+                <setup>
+                    <module>Worldview_Cluster</module>
+                </setup>
+            </worldview_cluster_setup>
+        </resources>
+    </global>
+</config>
