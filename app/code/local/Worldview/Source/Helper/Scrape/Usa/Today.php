@@ -1,6 +1,6 @@
 <?php
 
-class Worldview_Source_Helper_Scrape_USA_Today extends Worldview_Source_Helper_Scrape
+class Worldview_Source_Helper_Scrape_Usa_Today extends Worldview_Source_Helper_Scrape
 {
     public function getScrapedText($html)
     {
