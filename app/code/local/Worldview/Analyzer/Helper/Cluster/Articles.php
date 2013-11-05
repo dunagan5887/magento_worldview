@@ -20,7 +20,6 @@ class Worldview_Analyzer_Helper_Cluster_Articles extends Worldview_Analyzer_Help
         $clustering->sortAscendingByClusterSize();
 
         return $clustering;
-        $i = 1;
     }
 
     public function buildClustering($article_pos_tags_array)

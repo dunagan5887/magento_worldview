@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Worldview_Source>
-            <version>0.0.3</version>
+            <version>0.0.4</version>
         </Worldview_Source>
     </modules>
 
@@ -56,6 +56,10 @@
                 <usa_today_world>usa_today</usa_today_world>
                 <times_of_india_world>times_india</times_of_india_world>
                 <peoples_daily_world>peoples_daily</peoples_daily_world>
+                <economist_europe>economist</economist_europe>
+                <economist_middle_east_africa>economist</economist_middle_east_africa>
+                <economist_asia>economist</economist_asia>
+                <economist_americas>economist</economist_americas>
             </source_helpers>
         </scrape>
     </default>
