@@ -15,6 +15,15 @@
             <worldview_source_mysql4>
                 <class>Worldview_Source_Model_Mysql4</class>
                 <entities>
+                    <source_category>
+                        <table>source_category</table>
+                    </source_category>
+                    <source_language>
+                        <table>source_language</table>
+                    </source_language>
+                    <source_country>
+                        <table>source_country</table>
+                    </source_country>
                     <rss_source>
                         <table>worldview_rss_source</table>
                     </rss_source>
