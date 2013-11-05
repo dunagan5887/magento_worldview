@@ -23,6 +23,22 @@ class Worldview_GetFeeds_Model_Rss extends Worldview_GetFeeds_Model_Abstract
                 {
                     continue;
                 }
+
+                // If an article with the same link already exists in the database, don't record it again
+                $article_link = $item->link;
+                $article_resource = Mage::getModel(self::ARTICLE_CLASS_NAME)->getResource();
+                $read = $article_resource->getReadConnection();
+                $select = $read->select()->from($article_resource->getMainTable(), array('article_url'))
+                                ->where('article_url = ?', $article_link)
+                                ->limit(1);
+
+                $article_link_found = (bool) $read->fetchOne($select);
+
+                if ($article_link_found)
+                {
+                    continue;
+                }
+
                 // Ensure that the $item object contains a title
                 if (!isset($item->title) || empty($item->title))
                 {
@@ -31,6 +47,12 @@ class Worldview_GetFeeds_Model_Rss extends Worldview_GetFeeds_Model_Abstract
 
                 // Scrape the text from the page
                 $item_text = Mage::helper('worldview_source/scrape')->getScrapedPageText($item->link, $source->getRssCode());
+
+                if (!$item_text)
+                {
+                    continue;
+                }
+
                 $article = $this->convertItemToArticle($item, $item_text, $source);
                 if (!is_object($article))
                 {
@@ -52,6 +74,7 @@ class Worldview_GetFeeds_Model_Rss extends Worldview_GetFeeds_Model_Abstract
     public function convertItemToArticle($item, $item_text, $source)
     {
         $article = Mage::getModel(self::ARTICLE_CLASS_NAME);
+        $article->setSourceId($source->getId());
         $article->setArticleUrl($item->link);
         $article->setHeadline($item->title);
         $article->setArticleText($item_text);

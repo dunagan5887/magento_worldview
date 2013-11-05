@@ -21,6 +21,12 @@ $article_table =
         ),
         'Row ID for the table'
     )->addColumn(
+        'source_id',
+        Varien_Db_Ddl_Table::TYPE_BIGINT,
+        11,
+        array('unsigned'  => true, 'nullable'  => false),
+        'ID representing the source of the article'
+    )->addColumn(
         'article_url',
         Varien_Db_Ddl_Table::TYPE_VARCHAR,
         255,
@@ -78,6 +84,17 @@ $article_table =
         $installer->getIdxName('worldview_article/article', array('published_date')),
         array('published_date'),
         array('type' => Varien_Db_Adapter_Interface::INDEX_TYPE_INDEX)
+    )->addIndex(
+        $installer->getIdxName('worldview_article/article', array('article_url')),
+        array('article_url'),
+        array('type' => Varien_Db_Adapter_Interface::INDEX_TYPE_UNIQUE)
+    )->addForeignKey(
+        $installer->getFkName('worldview_article/article', 'source_id', 'worldview_source/rss_source', 'rss_source_id'),
+        'source_id',
+        $installer->getTable('worldview_source/rss_source'),
+        'rss_source_id',
+        Varien_Db_Ddl_Table::ACTION_CASCADE,
+        Varien_Db_Ddl_Table::ACTION_CASCADE
     )->setComment('Table Abstracting News Articles');
 
 $installer->getConnection()->createTable($article_table);

@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Worldview_Source>
-            <version>0.0.1</version>
+            <version>0.0.3</version>
         </Worldview_Source>
     </modules>
 
@@ -16,7 +16,7 @@
                 <class>Worldview_Source_Model_Mysql4</class>
                 <entities>
                     <rss_source>
-                        <table>rss_source</table>
+                        <table>worldview_rss_source</table>
                     </rss_source>
                 </entities>
             </worldview_source_mysql4>
@@ -42,6 +42,11 @@
             <source_helpers>
                 <fox_news_world>foxnews</fox_news_world>
                 <cnn_world>cnn</cnn_world>
+                <msnbc_world>msnbc</msnbc_world>
+                <huffington_post_world>huffington</huffington_post_world>
+                <usa_today_world>usa_today</usa_today_world>
+                <times_of_india_world>times_india</times_of_india_world>
+                <peoples_daily_world>peoples_daily</peoples_daily_world>
             </source_helpers>
         </scrape>
     </default>

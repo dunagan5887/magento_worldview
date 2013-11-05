@@ -1,6 +1,6 @@
 <?php
 
-class Worldview_Source_Helper_Scrape_Cnn extends Worldview_Source_Helper_Scrape
+class Worldview_Source_Helper_Scrape_Peoples_Daily extends Worldview_Source_Helper_Scrape
 {
     public function getScrapedText($html)
     {
@@ -14,8 +14,21 @@ class Worldview_Source_Helper_Scrape_Cnn extends Worldview_Source_Helper_Scrape
             return false;
         }
 
-        $story_area_divs = $html->find('div.cnn_storyarea');
+        $story_area_divs = $html->find('span#p_content');
         // There should only be one cnn_storyarea div tag, but account for the possibility of multiple
+        foreach ($story_area_divs as $story_area_div)
+        {
+            $article_text .= $story_area_div->plaintext . "\n";
+            /*
+            // Iterate over every paragraph block in the article-text div
+            foreach($story_area_div->find('p') as $paragraph)
+            {
+                $article_text .= $paragraph->plaintext . "\n";
+            }
+            */
+        }
+
+        $story_area_divs = $html->find('div.wb_content');
         foreach ($story_area_divs as $story_area_div)
         {
             // Iterate over every paragraph block in the article-text div

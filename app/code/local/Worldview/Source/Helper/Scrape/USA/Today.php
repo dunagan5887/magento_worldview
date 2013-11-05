@@ -1,6 +1,6 @@
 <?php
 
-class Worldview_Source_Helper_Scrape_Cnn extends Worldview_Source_Helper_Scrape
+class Worldview_Source_Helper_Scrape_USA_Today extends Worldview_Source_Helper_Scrape
 {
     public function getScrapedText($html)
     {
@@ -8,13 +8,7 @@ class Worldview_Source_Helper_Scrape_Cnn extends Worldview_Source_Helper_Scrape
         /* For CNN articles, the text is contained in a div with class cnn_storyarea. Paragraph tags within
          * this div contain the data we are looking for.
         */
-
-        if (!is_object($html))
-        {
-            return false;
-        }
-
-        $story_area_divs = $html->find('div.cnn_storyarea');
+        $story_area_divs = $html->find('article.story');
         // There should only be one cnn_storyarea div tag, but account for the possibility of multiple
         foreach ($story_area_divs as $story_area_div)
         {

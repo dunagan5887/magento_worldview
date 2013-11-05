@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <config>
     <modules>
-        <Worldview_Article>
+        <Worldview_Analyzer>
             <active>true</active>
             <codePool>local</codePool>
             <depends>
-                <Worldview_Source />
+                <Worldview_Tagger />
             </depends>
-        </Worldview_Article>
+        </Worldview_Analyzer>
     </modules>
 </config>

@@ -6,7 +6,6 @@ $installer = $this;
 // Clean installation.
 $installer->getConnection()->dropTable($installer->getTable('worldview_source/rss_source'));
 
-// Define Batch Table.
 $rss_source_table =
     $installer->getConnection()
     ->newTable($installer->getTable('worldview_source/rss_source'))
@@ -70,7 +69,6 @@ $rss_source_table =
         array('type' => Varien_Db_Adapter_Interface::INDEX_TYPE_INDEX)
     );
 
-// Create Batch, Batch Type, and Batch Item Tables.
 $installer->getConnection()->createTable($rss_source_table);
 
 $installer->endSetup();

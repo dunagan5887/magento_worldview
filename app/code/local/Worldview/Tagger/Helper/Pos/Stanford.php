@@ -12,7 +12,7 @@ class Worldview_Tagger_Helper_Pos_Stanford extends Worldview_Tagger_Helper_Pos_D
 
     public function getPrincipalPosStrings()
     {
-        return array();
+        return array('NNP');
     }
 
     public function parseFile($absolute_file_path, $blob_order_ids = null)

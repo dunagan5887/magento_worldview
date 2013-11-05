@@ -16,7 +16,7 @@
                 <class>Worldview_Article_Model_Mysql4</class>
                 <entities>
                     <article>
-                        <table>article</table>
+                        <table>worldview_article</table>
                     </article>
                 </entities>
             </worldview_article_mysql4>
